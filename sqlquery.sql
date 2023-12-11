@@ -20,6 +20,6 @@ SELECT
   timely_response,
   consumer_disputed
 FROM `bigquery-public-data.cfpb_complaints.complaint_database` 
-WHERE date_received >= '2022-01-01'
+WHERE date_received >= '2022-01-01' --the database at the time only has 2023 as the latest record; might need to modify to include this: AND date_received <= 2023-12-31
 AND LENGTH(zip_code) = 5
 AND state IS NOT NULL
